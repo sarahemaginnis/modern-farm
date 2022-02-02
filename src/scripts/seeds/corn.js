@@ -1,4 +1,4 @@
-export const createCorn = {return: [
+export const createCorn = () => {return [
         {
             type: "Corn",
             height: 180,
