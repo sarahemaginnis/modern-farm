@@ -9,5 +9,5 @@ export const addPlant = (seed) => {
 }
 
 export const usePlants = () => {
-    return [...emptyFieldArray]
+    return emptyFieldArray
 }
