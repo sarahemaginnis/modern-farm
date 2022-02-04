@@ -8,16 +8,16 @@ import { createWheat } from "./seeds/wheat.js"
 
 export const plantSeeds = (plantingPlan) => {
     for (const plantArr of plantingPlan) {
-        for (let i = 0; i < plantArr.length; i++) {
-            if (plantArr[i] === "Asparagus") {
+        for (const innerArr of plantArr) {
+            if (innerArr === "Asparagus") {
                 addPlant(createAsparagus())
-            } else if (plantArr[i] === "Potato") {
+            } else if (innerArr === "Potato") {
                 addPlant(createPotato())
-            } else if (plantArr[i] === "Soybean") {
+            } else if (innerArr === "Soybean") {
                 addPlant(createSoybean())
-            } else if (plantArr[i] === "Corn") {
-                addPlant(createCorn())
-            } else if (plantArr[i] === "Sunflower") {
+            } else if (innerArr === "Corn") {
+                createCorn().forEach(addPlant)
+            } else if (innerArr === "Sunflower") {
                 addPlant(createSunflower())
             } else {
                 addPlant(createWheat())
@@ -25,23 +25,3 @@ export const plantSeeds = (plantingPlan) => {
             }
         }
     }
-
-// export const plantSeeds = (plantingPlan) => {
-//     for (let i = 0; i < plantingPlan.length; i++) {
-//         for (let j = 0; j < plantingPlan[i].length; j++) {
-//           if (j === "Asparagus") {
-//               return addPlant(createAsparagus)
-//           } else if (j === "Potato") {
-//               return addPlant(createPotato)
-//           } else if (j === "Soybean") {
-//               return addPlant(createSoybean)
-//           } else if (j === "Corn") {
-//               return addPlant(createCorn)
-//           } else if (j === "Sunflower") {
-//               return addPlant(createSunflower)
-//           } else {
-//               return addPlant(createWheat)
-//           }
-//         }
-//     }
-// }
